@@ -88,3 +88,10 @@ selectTitle.addEventListener('change', (e)=>{
 
 
 // Get the event listener for the 'Select Menu' option in Design (((ALTERNATIVE SOLUTION IN WINDOW.ONLOAD())))
+// Add a change event listener
+// If the value equals a certain value
+
+// Get design element 
+let designEl = document.getElementById('design')
+
+// designEl event listener here .......
