@@ -25,7 +25,25 @@ window.onload = function(){
     let newOptionEl = document.createElement('option');
 
     // Give it a value and/or text
-    newOptionEl.textContent = 'Please select a T-Shirt theme'
+    newOptionEl.textContent = 'Please select a T-Shirt theme';
+
+    // Get the element for parent element that will be inserted
+    let colorSelect = document.getElementById('color')
+
+    // Possible solutions.....
+
+    // Do I want to use insert before, because if I do  I will have to delete the other options
+    // Or do I want to remove the elements completely and just add the single newOptionEl
+    // Or do I add the newOptionEl and THEN hide the other items until clicked
+
+    // Current solution --->  Loop through the children to hide display
+    // for(let i = 0; i < colorSelect.length; i++){
+    //     colorSelect[i].style.display = 'none'
+    // }
+
+    colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
+
+    console.log(colorSelect)
 
     //    Hide or do not display the option element when adding the 'change' event listener
 }
