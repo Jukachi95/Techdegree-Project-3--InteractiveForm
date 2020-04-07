@@ -95,3 +95,28 @@ selectTitle.addEventListener('change', (e)=>{
 let designEl = document.getElementById('design')
 
 // designEl event listener here .......
+designEl.addEventListener('change', (e)=>{
+
+    let colorSelect = document.getElementById('color');
+
+    if(e.target.value === 'js puns'){
+        // change the inner html of the color dropdown
+        // colorSelect.innerHTML = `
+        // <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>
+        // <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option> 
+        // <option value="gold">Gold (JS Puns shirt only)</option> 
+        // `
+
+        
+
+    } else{
+        // change the inner html of the color dropdown
+        // colorSelect.innerHTML = `
+        // <option value="tomato">Tomato (I &#9829; JS shirt only)</option>
+        // <option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option> 
+        // <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> 
+        // `
+    }
+
+
+})
