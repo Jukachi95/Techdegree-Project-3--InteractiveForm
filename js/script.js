@@ -41,8 +41,10 @@ window.onload = function(){
     //     colorSelect[i].style.display = 'none'
     // }
 
-    colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
+    // PREVIOUS SOLUTION
+    // colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
 
+    // New solution would be to hide the elements and only show the select tshirt message
     console.log(colorSelect)
 
     //    Hide or do not display the option element when adding the 'change' event listener
@@ -99,23 +101,55 @@ designEl.addEventListener('change', (e)=>{
 
     let colorSelect = document.getElementById('color');
 
-    if(e.target.value === 'js puns'){
+                                    // 7/4/2020 If there is no change on input , then it will be Please select a theme
+
+    if(e.target.value == 'js puns'){
+        
+        console.log(e.target.value)
+        colorSelect[0].hidden = false;
+        colorSelect[1].hidden = false;
+        colorSelect[2].hidden = false;
+        colorSelect[3].hidden = true;
+        colorSelect[4].hidden = true;
+        colorSelect[5].hidden = true;
+
+        colorSelect[0].selected = true;
+        
+
+        // console.log(colorSelect[3], colorSelect[4], colorSelect[5])
+
         // change the inner html of the color dropdown
         // colorSelect.innerHTML = `
         // <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>
         // <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option> 
         // <option value="gold">Gold (JS Puns shirt only)</option> 
         // `
-
+    } else if(e.target.value == 'heart js'){
+        colorSelect[0].hidden = true;
+        colorSelect[1].hidden = true;
+        colorSelect[2].hidden = true;
+        colorSelect[3].hidden = false;
+        colorSelect[4].hidden = false;
+        colorSelect[5].hidden = false;
         
+        colorSelect[3].selected = true;
 
-    } else{
+        // Solution 1 
+
         // change the inner html of the color dropdown
         // colorSelect.innerHTML = `
         // <option value="tomato">Tomato (I &#9829; JS shirt only)</option>
         // <option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option> 
         // <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> 
         // `
+
+        // Solution 2 --> Get the elements by index or by value and hide them
+        colorSelect[0].hidden = true;
+        colorSelect[1].hidden = true;
+        colorSelect[2].hidden = true;
+        console.log(e.target.value)
+    } else{
+        colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
     }
 
 
