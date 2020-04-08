@@ -94,26 +94,38 @@ selectTitle.addEventListener('change', (e)=>{
 // If the value equals a certain value
 
 // Get design element 
-let designEl = document.getElementById('design')
+let designEl = document.getElementById('design');
+let pleaseSelect = document.createElement('option');
+pleaseSelect.textContent = 'Please Select a T-Shirt theme';
+let colorSelect = document.getElementById('color')
+let colorFirstChild = colorSelect.firstElementChild;
+colorSelect.insertBefore(pleaseSelect, colorFirstChild)
+pleaseSelect.selected = true;
+
+for(let i = 1; i < colorSelect.length; i++){
+    colorSelect[i].hidden = true;
+}
 
 // designEl event listener here .......
 designEl.addEventListener('change', (e)=>{
 
     let colorSelect = document.getElementById('color');
-
+    
                                     // 7/4/2020 If there is no change on input , then it will be Please select a theme
 
-    if(e.target.value == 'js puns'){
+    if(e.target.value === 'js puns'){
         
         console.log(e.target.value)
-        colorSelect[0].hidden = false;
+        colorSelect[0].hidden = true;
         colorSelect[1].hidden = false;
         colorSelect[2].hidden = false;
-        colorSelect[3].hidden = true;
+        colorSelect[3].hidden = false;
         colorSelect[4].hidden = true;
         colorSelect[5].hidden = true;
+        colorSelect[6].hidden = true;
 
-        colorSelect[0].selected = true;
+        // The value that will be shown/selected when the relevant option is picked
+        colorSelect[1].selected = true;
         
 
         // console.log(colorSelect[3], colorSelect[4], colorSelect[5])
@@ -128,11 +140,13 @@ designEl.addEventListener('change', (e)=>{
         colorSelect[0].hidden = true;
         colorSelect[1].hidden = true;
         colorSelect[2].hidden = true;
-        colorSelect[3].hidden = false;
+        colorSelect[3].hidden = true;
         colorSelect[4].hidden = false;
         colorSelect[5].hidden = false;
+        colorSelect[6].hidden = false;
         
-        colorSelect[3].selected = true;
+        // The value that will be shown/selected when the relevant option is picked
+        colorSelect[4].selected = true;
 
         // Solution 1 
 
@@ -144,13 +158,8 @@ designEl.addEventListener('change', (e)=>{
         // `
 
         // Solution 2 --> Get the elements by index or by value and hide them
-        colorSelect[0].hidden = true;
-        colorSelect[1].hidden = true;
-        colorSelect[2].hidden = true;
-        console.log(e.target.value)
-    } else{
-        colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
-    }
+        
+    } 
 
 
 })
