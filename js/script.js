@@ -19,7 +19,6 @@ window.onload = function(){
     selectOption.style.display = 'none'
     // The value can be viewed but cannot be selected from the dropdown
 
-    // ??? IF THE DROPDOWN HASNT BEEN CLICKED
 
     // Create an option element 
     let newOptionEl = document.createElement('option');
@@ -85,26 +84,37 @@ selectTitle.addEventListener('change', (e)=>{
                                         // * T-Shirt section * //
 
 
-// If a design has not been picked by the user on the Design tab
-// Change 
-
-
-// Get the event listener for the 'Select Menu' option in Design (((ALTERNATIVE SOLUTION IN WINDOW.ONLOAD())))
-// Add a change event listener
-// If the value equals a certain value
-
 // Get design element 
 let designEl = document.getElementById('design');
+
+// Create an option element
 let pleaseSelect = document.createElement('option');
+
+// Create the text to be displayed in the option element
 pleaseSelect.textContent = 'Please Select a T-Shirt theme';
-let colorSelect = document.getElementById('color')
+
+// Get the parent element of the color option dropdown
+let colorSelect = document.getElementById('color');
+
+// For reference, get the first element child for the color dropdown a.k.a colorSelect
+// This should be the option element with the text 'Cornflower Blue (JS Puns shirt only)'
 let colorFirstChild = colorSelect.firstElementChild;
+
+// Use the insertBefore method to add the 'Please select a T-Shirt theme' to the dropdown
 colorSelect.insertBefore(pleaseSelect, colorFirstChild)
+
+// Add the attribute of 'selected' to the new option element so that it is selected by default
 pleaseSelect.selected = true;
 
+
+// Loop through the indexes to hide all the other option elements
+// Index 0 is the first option element (Please select a T-Shirt), so indexes after 0 must be hidden
+// Hence why the loop starts at index 1
 for(let i = 1; i < colorSelect.length; i++){
     colorSelect[i].hidden = true;
 }
+
+
 
 // designEl event listener here .......
 designEl.addEventListener('change', (e)=>{
@@ -113,53 +123,49 @@ designEl.addEventListener('change', (e)=>{
     
                                     // 7/4/2020 If there is no change on input , then it will be Please select a theme
 
-    if(e.target.value === 'js puns'){
+ // If the selected option is equal to 'js puns', hide all the 'heart js' options
+         if(e.target.value === 'js puns'){
+                
+                console.log(e.target.value)
+                colorSelect[0].hidden = true;
+                colorSelect[1].hidden = false;
+                colorSelect[2].hidden = false;
+                colorSelect[3].hidden = false;
+                colorSelect[4].hidden = true;
+                colorSelect[5].hidden = true;
+                colorSelect[6].hidden = true;
+
+                // The value that will be selected by default when the 'js puns' is picked
+                colorSelect[1].selected = true;
         
-        console.log(e.target.value)
-        colorSelect[0].hidden = true;
-        colorSelect[1].hidden = false;
-        colorSelect[2].hidden = false;
-        colorSelect[3].hidden = false;
-        colorSelect[4].hidden = true;
-        colorSelect[5].hidden = true;
-        colorSelect[6].hidden = true;
 
-        // The value that will be shown/selected when the relevant option is picked
-        colorSelect[1].selected = true;
+ // If the selected option is equal to 'heart js', hide all the 'js puns' options               
+         } else if(e.target.value == 'heart js'){
+
+                colorSelect[0].hidden = true;
+                colorSelect[1].hidden = true;
+                colorSelect[2].hidden = true;
+                colorSelect[3].hidden = true;
+                colorSelect[4].hidden = false;
+                colorSelect[5].hidden = false;
+                colorSelect[6].hidden = false;
         
+                // The value that will be selected by default when 'heart js' is picked
+                colorSelect[4].selected = true;
 
-        // console.log(colorSelect[3], colorSelect[4], colorSelect[5])
-
-        // change the inner html of the color dropdown
-        // colorSelect.innerHTML = `
-        // <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>
-        // <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option> 
-        // <option value="gold">Gold (JS Puns shirt only)</option> 
-        // `
-    } else if(e.target.value == 'heart js'){
-        colorSelect[0].hidden = true;
-        colorSelect[1].hidden = true;
-        colorSelect[2].hidden = true;
-        colorSelect[3].hidden = true;
-        colorSelect[4].hidden = false;
-        colorSelect[5].hidden = false;
-        colorSelect[6].hidden = false;
-        
-        // The value that will be shown/selected when the relevant option is picked
-        colorSelect[4].selected = true;
-
-        // Solution 1 
-
-        // change the inner html of the color dropdown
-        // colorSelect.innerHTML = `
-        // <option value="tomato">Tomato (I &#9829; JS shirt only)</option>
-        // <option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option> 
-        // <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> 
-        // `
-
-        // Solution 2 --> Get the elements by index or by value and hide them
-        
+    
     } 
-
-
 })
+
+                            // * Actvity Section * //
+
+// Create a DOM element that will be appended to the 'activity' section
+let newActivity = document.createElement('input')
+
+// Get 'activities' section
+let activitySection = document.querySelector('.activities')
+console.log(activitySection)
+activitySection.appendChild(newActivity)
+
+// Create a variable for the activity total that will be added to
+let activityTotal = 0;
