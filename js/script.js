@@ -44,7 +44,7 @@ window.onload = function(){
     // colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
 
     // New solution would be to hide the elements and only show the select tshirt message
-    console.log(colorSelect)
+    // console.log(colorSelect)
 
     //    Hide or do not display the option element when adding the 'change' event listener
 }
@@ -160,12 +160,28 @@ designEl.addEventListener('change', (e)=>{
                             // * Actvity Section * //
 
 // Create a DOM element that will be appended to the 'activity' section
-let newActivity = document.createElement('input')
+let newActivity = document.createElement('label')
 
 // Get 'activities' section
 let activitySection = document.querySelector('.activities')
-console.log(activitySection)
+// console.log(activitySection)
 activitySection.appendChild(newActivity)
 
 // Create a variable for the activity total that will be added to
 let activityTotal = 0;
+
+
+// Listen for changes in the activity section
+activitySection.addEventListener('change', (e)=>{
+
+// Console.log() the input value that has been clicked 
+let clickedVal = e.target
+
+// Get the 'data-cost' attribute of the clicked input
+let clickedValCost = clickedVal.getAttribute('data-cost')
+
+
+
+console.log(clickedValCost)
+
+})
