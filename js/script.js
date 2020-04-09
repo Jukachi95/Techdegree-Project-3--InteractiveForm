@@ -168,6 +168,7 @@ let activitySection = document.querySelector('.activities')
 activitySection.appendChild(newActivity)
 
 // Create a variable for the activity total that will be added to
+// ?????? May have to change  variable name to 'cost'
 let activityTotal = 0;
 
 
@@ -178,10 +179,12 @@ activitySection.addEventListener('change', (e)=>{
 let clickedVal = e.target
 
 // Get the 'data-cost' attribute of the clicked input
-let clickedValCost = clickedVal.getAttribute('data-cost')
+// Convert the returned value to a number
+let clickedValCost = Number(clickedVal.getAttribute('data-cost'))
 
-
-
+// Check that the correct value(s) are being logged
 console.log(clickedValCost)
 
+// If/else statement to check if the input was checked
+// e.target.checked === true, then add val to activityTotal  
 })
