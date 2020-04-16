@@ -175,16 +175,32 @@ let activityTotal = 0;
 // Listen for changes in the activity section
 activitySection.addEventListener('change', (e)=>{
 
-// Console.log() the input value that has been clicked 
-let clickedVal = e.target
+        // Console.log() the input value that has been clicked 
+        let clickedVal = e.target
 
-// Get the 'data-cost' attribute of the clicked input
-// Convert the returned value to a number
-let clickedValCost = Number(clickedVal.getAttribute('data-cost'))
+        // Get the 'data-cost' attribute of the clicked input
+        // Convert the returned value to a number
+        let clickedValCost = Number(clickedVal.getAttribute('data-cost'))
 
-// Check that the correct value(s) are being logged
-console.log(clickedValCost)
+        // Check that the correct value(s) are being logged
+        console.log(clickedVal)
 
-// If/else statement to check if the input was checked
-// e.target.checked === true, then add val to activityTotal  
+        // If/else statement to check if the input was checked
+        // e.target.checked === true, then add val to activityTotal  
+
+        // If the input is checked....
+        if(clickedVal.checked){
+
+            // Add the value to the activityTotal variable
+            activityTotal+=clickedValCost;
+            
+
+        } else {
+
+            // If unclicked, subtract the value from the activityTotal
+            activityTotal-=clickedValCost;
+            
+        }
+
+console.log(activityTotal)
 })
