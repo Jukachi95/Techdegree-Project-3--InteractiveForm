@@ -193,14 +193,17 @@ activitySection.addEventListener('change', (e)=>{
 
             // Add the value to the activityTotal variable
             activityTotal+=clickedValCost;
-            
+            newActivity.innerHTML = 'Total: $' + activityTotal
 
         } else {
 
             // If unclicked, subtract the value from the activityTotal
             activityTotal-=clickedValCost;
-            
+            newActivity.innerHTML = 'Total: $' + activityTotal
         }
 
-console.log(activityTotal)
+
+        
+        // Create variable for data-day and time attributes
+
 })
