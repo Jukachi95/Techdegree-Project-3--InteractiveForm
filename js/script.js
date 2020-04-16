@@ -206,4 +206,13 @@ activitySection.addEventListener('change', (e)=>{
         
         // Create variable for data-day and time attributes
 
+        let dateTime = clickedVal.getAttribute('data-day-and-time')
+
+        // Loop over checkbox inputs in activity section
+        let activityInputs = document.querySelectorAll('input[type="checkbox"]')
+
+        // There should be 7 inputs
+        console.log(activityInputs)
+
+        
 })
