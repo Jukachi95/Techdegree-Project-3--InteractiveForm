@@ -214,5 +214,21 @@ activitySection.addEventListener('change', (e)=>{
         // There should be 7 inputs
         console.log(activityInputs)
 
-        
+                for(i = 0; i < activityInputs.length; i++){
+                    let currentIteration = activityInputs[i];
+                    
+                        if(dateTime === currentIteration.getAttribute('data-day-and-time') && clickedVal.name != currentIteration.name && clickedVal.checked){
+                                currentIteration.disabled = true
+                        } else if(!clickedVal.checked){
+                                currentIteration.disabled = false;
+                        }
+
+
+                }
+
+
+                // Does the activity at the current iteration? occur at the same time the
+                // clicked activity is taking place
+            
+
 })
