@@ -229,6 +229,16 @@ activitySection.addEventListener('change', (e)=>{
 
                 // Does the activity at the current iteration? occur at the same time the
                 // clicked activity is taking place
-            
-
+        
 })
+
+
+                                        // Payment Section //
+
+
+// Select the 'payment' dropdown and hide the 'Select Payment Option' from dropdown
+
+let selectPaymentOpt = document.querySelector('#payment')[0];
+selectPaymentOpt.hidden = true;
+console.log(selectPaymentOpt)
+
