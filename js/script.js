@@ -242,3 +242,41 @@ let selectPaymentOpt = document.querySelector('#payment')[0];
 selectPaymentOpt.hidden = true;
 console.log(selectPaymentOpt)
 
+
+// Select the 'payment' element
+
+let paymentEl = document.querySelector('#payment');
+
+
+// Select the corresponding divs for each payment option
+
+let paypalDiv = document.querySelector('#paypal');
+let bitcoinDiv = document.querySelector('#bitcoin');
+let creditCardDiv = document.querySelector('#credit-card')
+
+
+
+// Display the payment option divs, depending on the option that has been clicked
+
+paymentEl.addEventListener('change', (e)=>{
+
+        if(e.target.value === "credit card"){
+
+            creditCardDiv.hidden = false;
+            paypalDiv.hidden = true;
+            bitcoinDiv.hidden = true;
+
+        } else if (e.target.value === "bitcoin"){
+
+            creditCardDiv.hidden = true;
+            paypalDiv.hidden = true;
+            bitcoinDiv.hidden = false;
+
+        } else if(e.target.value === "paypal"){
+            creditCardDiv.hidden = true;
+            paypalDiv.hidden = false;
+            bitcoinDiv.hidden = true;
+        }
+       
+
+})
