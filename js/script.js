@@ -280,3 +280,32 @@ paymentEl.addEventListener('change', (e)=>{
        
 
 })
+
+                                        // Form Validation  - Event Listener
+
+// Select the "submit" button
+let submitBtn = document.querySelector('button[type="submit"]')
+
+submitBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
+
+    // May have to delcare variables before putting into functions
+
+    let userNameInput = document.querySelector('#name').value
+console.log(userNameInput)
+    
+    
+})
+
+function validName(){
+    
+    let userNameInput = document.querySelector('#name').value
+
+    // Can only be letters and must be more than 1 letter
+    let nameValid = /\D[a-z]+/ig
+
+    // Test this value against the vaue provided by the user
+
+}
+
+
