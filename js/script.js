@@ -283,7 +283,7 @@ paymentEl.addEventListener('change', (e)=>{
 
                                         // Form Validation  - Event Listener
 
-// sUBMIT BUTTON EVENT LISTENER
+// SUBMIT BUTTON EVENT LISTENER
 let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
