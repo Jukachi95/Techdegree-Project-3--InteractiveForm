@@ -302,10 +302,12 @@ submitBtn.addEventListener('click', (e)=>{
 function validName(){
 
     // Can only be letters and must be more than 1 letter
-    let nameValid = /\D[a-z]+/ig
-
+    let nameValid = /\D[a-z]{1,}/ig
+    let name = "Joel"
     // Test this value against the vaue provided by the user
+    let isNameValid = nameValid.test(name)
 
+    console.log(isNameValid)
 }
 
-
+validName()
