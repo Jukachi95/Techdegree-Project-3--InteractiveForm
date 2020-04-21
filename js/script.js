@@ -283,24 +283,12 @@ paymentEl.addEventListener('change', (e)=>{
 
                                         // Form Validation  - Event Listener
 
-// SUBMIT BUTTON EVENT LISTENER
-let submitBtn = document.querySelector('button[type="submit"]')
 
-submitBtn.addEventListener('click', (e)=>{
-    e.preventDefault()
-
-    // May have to delcare variables before putting into functions
-
-    let userNameInput = document.querySelector('#name').value
-    console.log(userNameInput)
-    
-    
-})
 
 // Function that formats display for errors
 // Should take in element name as parameter to style
-function dispayError(){
-
+function dispayError(el){
+ el.style.borderColor = 'red'
 }
 
 function validName(){
@@ -311,10 +299,30 @@ function validName(){
     // Test this value against the vaue provided by the user
     let isNameValid = nameValid.test(name)
 
+    // Select username input box
+    let userNameInput = document.querySelector('#name');
+
     // If the name is not valid, run a function that displays red
     if(isNameValid == false){
-
+        displayError(userNameInput)
     }
 }
 
-validName()
+
+// SUBMIT BUTTON EVENT LISTENER
+let submitBtn = document.querySelector('button[type="submit"]')
+
+submitBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
+
+    validName()
+    // May have to delcare variables before putting into functions
+
+    // let userNameValue = document.querySelector('#name').value
+    // console.log(userNameValue)
+    
+    
+})
+
+
+
