@@ -297,7 +297,11 @@ submitBtn.addEventListener('click', (e)=>{
     
 })
 
+// Function that formats display for errors
+// Should take in element name as parameter to style
+function dispayError(){
 
+}
 
 function validName(){
 
@@ -307,7 +311,10 @@ function validName(){
     // Test this value against the vaue provided by the user
     let isNameValid = nameValid.test(name)
 
-    console.log(isNameValid)
+    // If the name is not valid, run a function that displays red
+    if(isNameValid == false){
+
+    }
 }
 
 validName()
