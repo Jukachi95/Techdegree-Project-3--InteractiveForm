@@ -287,20 +287,24 @@ paymentEl.addEventListener('change', (e)=>{
 
 // Function that formats display for errors
 // Should take in element name as parameter to style
-function dispayError(el){
+function displayError(el){
  el.style.borderColor = 'red'
 }
 
 function validName(){
 
-    // Can only be letters and must be more than 1 letter
+    // Can only be letters and must be more than 1 character
     let nameValid = /\D[a-z]{1,}/ig
-    let name = "Joel"
-    // Test this value against the vaue provided by the user
-    let isNameValid = nameValid.test(name)
-
+    
+    
     // Select username input box
     let userNameInput = document.querySelector('#name');
+
+    // Select username input value
+    let userNameValue = document.querySelector('#name').value
+
+    // Test this value against the vaue provided by the user
+    let isNameValid = nameValid.test(userNameValue)
 
     // If the name is not valid, run a function that displays red
     if(isNameValid == false){
