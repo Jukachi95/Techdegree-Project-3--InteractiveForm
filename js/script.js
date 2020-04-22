@@ -313,6 +313,15 @@ function validName(){
 }
 
 
+function validEmail(){
+
+
+    let emailValid = //ig
+
+
+}
+
+
 // SUBMIT BUTTON EVENT LISTENER
 let submitBtn = document.querySelector('button[type="submit"]')
 
