@@ -291,8 +291,16 @@ function displayError(el){
         el.style.borderColor = 'red'
 
         // Error message
+        let errorEl = document.createElement("p")
+
+        // Error message text
+        errorEl.textContent = 'Please use the appropriate format'
+
+        // Append error message to element
+        el.appendChild(errorEl)
+
+        // insertbefore next element child
         
-        el.append
 }
 
 function validName(){
