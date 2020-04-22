@@ -288,7 +288,11 @@ paymentEl.addEventListener('change', (e)=>{
 // Function that formats display for errors
 // Should take in element name as parameter to style
 function displayError(el){
- el.style.borderColor = 'red'
+        el.style.borderColor = 'red'
+
+        // Error message
+        
+        el.append
 }
 
 function validName(){
@@ -316,19 +320,23 @@ function validName(){
 function validEmail(){
 
 
+    // Regular expression rule that input has to meet
     let emailValid = /[^@]+@[^@]+\.[^@]+/ig
 
     let emailInput = document.querySelector('#mail')
 
-    let emailInputValue = document.querySelector('#mail').value
+    let emailInputValue = emailInput.value
 
-    let isEmailValid = emailValid.test(emailInput);
+    let isEmailValid = emailValid.test(emailInputValue);
 
     if(isEmailValid == false){
         displayError(emailInput)
     }
 
 }
+
+
+// Error Message Function
 
 
 // SUBMIT BUTTON EVENT LISTENER
