@@ -316,8 +316,17 @@ function validName(){
 function validEmail(){
 
 
-    let emailValid = //ig
+    let emailValid = /[^@]+@[^@]+\.[^@]+/ig
 
+    let emailInput = document.querySelector('#mail')
+
+    let emailInputValue = document.querySelector('#mail').value
+
+    let isEmailValid = emailValid.test(emailInput);
+
+    if(isEmailValid == false){
+        displayError(emailInput)
+    }
 
 }
 
@@ -329,6 +338,7 @@ submitBtn.addEventListener('click', (e)=>{
     e.preventDefault()
 
     validName()
+    validEmail()
     // May have to delcare variables before putting into functions
 
     // let userNameValue = document.querySelector('#name').value
