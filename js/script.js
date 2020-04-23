@@ -325,9 +325,12 @@ function displayError(el){
 function removeError(el){
 
         // Remove styling
-        el.style.borderColor = 'none'
 
-        el.nextElementSibling.remove()
+        el.style.borderColor = 'none'
+        
+        if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+            el.nextElementSibling.remove()
+        }
 }
 
 function validName(){
@@ -354,6 +357,8 @@ function validName(){
 }
 
 
+// Function to validate email
+
 function validEmail(){
 
 
@@ -368,6 +373,8 @@ function validEmail(){
 
     if(isEmailValid == false){
         displayError(emailInput)
+    } else{
+        removeError(emailInput);
     }
 
 }
