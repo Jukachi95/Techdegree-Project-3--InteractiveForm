@@ -286,12 +286,20 @@ paymentEl.addEventListener('change', (e)=>{
 
 
 // Function that formats display for errors
+
+
+// Tooltip
+
+function toolTip(){
+    // Format tooltip
+}
+
 // Should take in element name as parameter to style
 function displayError(el){
         el.style.borderColor = 'red'
 
         // Error message
-        let errorEl = document.createElement("p")
+        let errorEl = document.createElement("span")
 
         // Error message text
         errorEl.textContent = 'Please use the appropriate format'
@@ -302,6 +310,8 @@ function displayError(el){
         // insertbefore next element child
         el.parentElement.insertBefore(errorEl, el.nextElementSibling)
 }
+
+
 
 function validName(){
 
