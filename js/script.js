@@ -311,6 +311,9 @@ function displayError(el){
         el.appendChild(errorEl)
 
 
+        // ***********************************************************
+        //  IF THE NEXT ELEMENT CHILD IS NOT A 'PLEASE USE THE APP FORMAT" OR A "SPAN", append it
+
         // Error message color
         errorEl.style.color = 'red'
 
@@ -326,7 +329,7 @@ function removeError(el){
 
         // Remove styling
 
-        el.style.borderColor = 'none'
+        el.style.borderColor = '#5e97b0'
         
         if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
             el.nextElementSibling.remove()
