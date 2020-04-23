@@ -315,10 +315,14 @@ function displayError(el){
         errorEl.style.color = 'red'
 
         // insertbefore next element child
-        setTimeout(el.parentElement.insertBefore(errorEl, el.nextElementSibling), 3000)
+        el.parentElement.insertBefore(errorEl, el.nextElementSibling)
 }
 
+// Function to remove error message
 
+    
+
+function removeError
 
 function validName(){
 
@@ -338,6 +342,8 @@ function validName(){
     // If the name is not valid, run a function that displays red
     if(isNameValid == false){
        displayError(userNameInput)
+    } else{
+
     }
 }
 
