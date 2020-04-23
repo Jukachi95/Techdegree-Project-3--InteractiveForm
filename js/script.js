@@ -285,14 +285,17 @@ paymentEl.addEventListener('change', (e)=>{
 
 
 
-// Function that formats display for errors
+
+
+
+                            // Functions that formats display for errors
 
 
 // Tooltip
-
-function toolTip(){
-    // Format tooltip
-}
+// function toolTip(text){
+//     // Format tooltip
+    
+// }
 
 // Should take in element name as parameter to style
 function displayError(el){
@@ -307,8 +310,12 @@ function displayError(el){
         // Append error message to element
         el.appendChild(errorEl)
 
+
+        // Error message color
+        errorEl.style.color = 'red'
+
         // insertbefore next element child
-        el.parentElement.insertBefore(errorEl, el.nextElementSibling)
+        setTimeout(el.parentElement.insertBefore(errorEl, el.nextElementSibling), 3000)
 }
 
 
@@ -330,7 +337,7 @@ function validName(){
 
     // If the name is not valid, run a function that displays red
     if(isNameValid == false){
-        displayError(userNameInput)
+       displayError(userNameInput)
     }
 }
 
