@@ -300,7 +300,7 @@ function displayError(el){
         el.appendChild(errorEl)
 
         // insertbefore next element child
-        
+        el.parentElement.insertBefore(errorEl, el.nextElementSibling)
 }
 
 function validName(){
