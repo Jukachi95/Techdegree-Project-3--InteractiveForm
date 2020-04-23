@@ -318,11 +318,17 @@ function displayError(el){
         el.parentElement.insertBefore(errorEl, el.nextElementSibling)
 }
 
-// Function to remove error message
+// Function to remove error message or remove class
 
     
 
-function removeError
+function removeError(el){
+
+        // Remove styling
+        el.style.borderColor = 'none'
+
+        el.nextElementSibling.remove()
+}
 
 function validName(){
 
@@ -343,7 +349,7 @@ function validName(){
     if(isNameValid == false){
        displayError(userNameInput)
     } else{
-
+        removeError(userNameInput)
     }
 }
 
