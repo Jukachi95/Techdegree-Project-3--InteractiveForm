@@ -387,6 +387,13 @@ function validEmail(){
 }
 
 
+
+function validActivitySection(){
+    
+}
+
+
+
 // Error Message Function
 
 
