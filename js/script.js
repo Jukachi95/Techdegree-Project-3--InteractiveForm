@@ -392,7 +392,15 @@ function validActivitySection(){
     
     let activityButtons = document.querySelectorAll("input[type='checkbox']");
 
-    console.log(activityButtons)
+    
+
+    for(i = 0; i < activityButtons.length; i++){
+        if(activityButtons.length.checked >= 1){
+            console.log("clicked")
+        }else{
+            console.log("not clicked")
+        }
+    }
 
 }
 
