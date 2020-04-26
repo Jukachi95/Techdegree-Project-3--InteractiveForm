@@ -308,17 +308,20 @@ function displayError(el){
         errorEl.textContent = 'Please use the appropriate format'
 
         // Append error message to element
-        el.appendChild(errorEl)
+        // To prevent duplication, if the next element sibling does not have the error text, append it
+        if(el.nextElementSibling.textContent != "Please use the appropriate format"){
+           
+            // insertbefore next element child
+          el.parentElement.insertBefore(errorEl, el.nextElementSibling)
+            
+        } 
 
-
-        // ***********************************************************
-        //  IF THE NEXT ELEMENT CHILD IS NOT A 'PLEASE USE THE APP FORMAT" OR A "SPAN", append it
+        
 
         // Error message color
         errorEl.style.color = 'red'
 
-        // insertbefore next element child
-        el.parentElement.insertBefore(errorEl, el.nextElementSibling)
+        
 }
 
 // Function to remove error message or remove class
