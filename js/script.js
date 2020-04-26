@@ -325,42 +325,42 @@ function displayError(el){
         
 }
 
-// Function to remove error message or remove class
-
-    
+// Function to remove error message 
 
 function removeError(el){
 
-        // Remove styling
+            // Remove styling
 
-        el.style.borderColor = '#5e97b0'
-        
-        if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
-            el.nextElementSibling.remove()
-        }
+            el.style.borderColor = '#5e97b0'
+            
+            if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+                el.nextElementSibling.remove()
+            }
+
 }
 
 function validName(){
 
-    // Can only be letters and must be more than 1 character
-    let nameValid = /\D[a-z]{1,}/ig
-    
-    
-    // Select username input box
-    let userNameInput = document.querySelector('#name');
+            // Can only be letters and must be more than 1 character
+            let nameValid = /\D[a-z]{1,}/ig
+            
+            
+            // Select username input box
+            let userNameInput = document.querySelector('#name');
 
-    // Select username input value
-    let userNameValue = document.querySelector('#name').value
+            // Select username input value
+            let userNameValue = document.querySelector('#name').value
 
-    // Test this value against the vaue provided by the user
-    let isNameValid = nameValid.test(userNameValue)
+            // Test this value against the vaue provided by the user
+            let isNameValid = nameValid.test(userNameValue)
 
-    // If the name is not valid, run a function that displays red
-    if(isNameValid == false){
-       displayError(userNameInput)
-    } else{
-        removeError(userNameInput)
-    }
+            // If the name is not valid, run a function that displays red
+            if(isNameValid == false){
+            displayError(userNameInput)
+            } else{
+                removeError(userNameInput)
+            }
+
 }
 
 
@@ -369,20 +369,20 @@ function validName(){
 function validEmail(){
 
 
-    // Regular expression rule that input has to meet
-    let emailValid = /[^@]+@[^@]+\.[^@]+/ig
+            // Regular expression rule that input has to meet
+            let emailValid = /[^@]+@[^@]+\.[^@]+/ig
 
-    let emailInput = document.querySelector('#mail')
+            let emailInput = document.querySelector('#mail')
 
-    let emailInputValue = emailInput.value
+            let emailInputValue = emailInput.value
 
-    let isEmailValid = emailValid.test(emailInputValue);
+            let isEmailValid = emailValid.test(emailInputValue);
 
-    if(isEmailValid == false){
-        displayError(emailInput)
-    } else{
-        removeError(emailInput);
-    }
+            if(isEmailValid == false){
+                displayError(emailInput)
+            } else{
+                removeError(emailInput);
+            }
 
 }
 
