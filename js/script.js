@@ -395,12 +395,26 @@ function validActivitySection(){
     
 
     for(i = 0; i < activityButtons.length; i++){
-        if(activityButtons.length.checked >= 1){
-            console.log("clicked")
+
+        let total = 0;
+
+        if(activityButtons[i].checked){
+            total+=activityButtons[i].length
+            // console.log(activityButtons.length)
         }else{
-            console.log("not clicked")
+            console.log(activityButtons.length)
         }
     }
+
+
+    // ***** POSSIBLE SOLUTION ***** ///// 
+    // if(activityButtons.checked){
+    //     console.log("checked")
+    //     // console.log(activityButtons.length)
+    // }else{
+    //     console.log("not checked")
+    // }
+    
 
 }
 
