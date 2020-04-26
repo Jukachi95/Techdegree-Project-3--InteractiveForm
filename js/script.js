@@ -390,6 +390,10 @@ function validEmail(){
 
 function validActivitySection(){
     
+    let activityButtons = document.querySelectorAll("input[type='checkbox']");
+
+    console.log(activityButtons)
+
 }
 
 
@@ -405,6 +409,7 @@ submitBtn.addEventListener('click', (e)=>{
 
     validName()
     validEmail()
+    validActivitySection()
     // May have to delcare variables before putting into functions
 
     // let userNameValue = document.querySelector('#name').value
