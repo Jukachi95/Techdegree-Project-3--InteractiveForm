@@ -390,45 +390,45 @@ function validEmail(){
 
 function validActivitySection(){
     
-    let activityButtons = document.querySelectorAll("input[type='checkbox']");
+    let activityButtons = document.querySelector("input[type='checkbox']:checked");
+    
+    if
     
 
-    
-
-    for(i = 0; i < activityButtons.length; i++){
+//     for(i = 0; i < activityButtons.length; i++){
 
         
 
-        // if(activityButtons[i].checked){
+//         // if(activityButtons[i].checked){
 
-        //     activityButtons[i].addEventListener('click', ()=>{
-        //         console.log("checked")  
-        //     })
+//         //     activityButtons[i].addEventListener('click', ()=>{
+//         //         console.log("checked")  
+//         //     })
             
-        //     // console.log(activityButtons.length)
-        // }else{
-        //     console.log("none checked")
-        // }
+//         //     // console.log(activityButtons.length)
+//         // }else{
+//         //     console.log("none checked")
+//         // }
 
-        activityButtons[i].addEventListener('click', ()=>{
-                if(!activityButtons[i].checked){
-                    console.log("none checked")
-                }
+//         activityButtons[i].addEventListener('click', ()=>{
+//                 if(!activityButtons.checked){
+//                     console.log("none checked")
+//                 }
 
-    })
+//     })
 
 
-    // ***** POSSIBLE SOLUTION ***** '///// 
-    // if(activityButtons.checked){
-    //     console.log("checked")
-    //     // console.log(activityButtons.length)
-    // }else{
-    //     console.log("not checked")
-    // }
+//     // ***** POSSIBLE SOLUTION ***** '///// 
+//     // if(activityButtons.checked){
+//     //     console.log("checked")
+//     //     // console.log(activityButtons.length)
+//     // }else{
+//     //     console.log("not checked")
+//     // }
     
 
+// }
 }
-
 
 
 // Error Message Function
