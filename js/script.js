@@ -391,23 +391,34 @@ function validEmail(){
 function validActivitySection(){
     
     let activityButtons = document.querySelectorAll("input[type='checkbox']");
+    
 
     
 
     for(i = 0; i < activityButtons.length; i++){
 
-        let total = 0;
+        
 
-        if(activityButtons[i].checked){
-            total+=activityButtons[i].length
-            // console.log(activityButtons.length)
-        }else{
-            console.log(activityButtons.length)
-        }
-    }
+        // if(activityButtons[i].checked){
+
+        //     activityButtons[i].addEventListener('click', ()=>{
+        //         console.log("checked")  
+        //     })
+            
+        //     // console.log(activityButtons.length)
+        // }else{
+        //     console.log("none checked")
+        // }
+
+        activityButtons[i].addEventListener('click', ()=>{
+                if(!activityButtons[i].checked){
+                    console.log("none checked")
+                }
+
+    })
 
 
-    // ***** POSSIBLE SOLUTION ***** ///// 
+    // ***** POSSIBLE SOLUTION ***** '///// 
     // if(activityButtons.checked){
     //     console.log("checked")
     //     // console.log(activityButtons.length)
