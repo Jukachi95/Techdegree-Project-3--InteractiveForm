@@ -316,6 +316,7 @@ function displayError(el){
             
         } 
 
+        
         // Error message color
         errorEl.style.color = 'red';
 
@@ -390,12 +391,14 @@ function validEmail(){
 
 function validActivitySection(){
     
-    let activityButtons = document.querySelector("input[type='checkbox']:checked");
+    let activityButtonChecked = document.querySelector("input[type='checkbox']:checked");
+
+    let activityDiv = document.querySelector('.activities')
     
-    if(!activityButtons){
-        console.log("not clicked")
+    if(!activityButtonChecked){
+        displayError(activityDiv)
     } else{
-        console.log("one has been clicked")
+        removeError(activityDiv)
     }
     
 
