@@ -316,6 +316,10 @@ function displayError(el){
             
         } 
 
+        if(el.children.typeof == "object"){
+            errorEl.textContent = 'Please tick one of the options'
+        }
+
         
         // Error message color
         errorEl.style.color = 'red';
