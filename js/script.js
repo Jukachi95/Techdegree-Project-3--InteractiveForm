@@ -318,10 +318,8 @@ function displayError(el){
             
         } 
 
-        if(el.children.typeof == "object"){
-            errorEl.textContent = 'Please tick one of the options'
-        }
 
+        
         
         // Error message color
         errorEl.style.color = 'red';
@@ -443,8 +441,8 @@ function validActivitySection(){
 // }
 }
 
-// let checkbox = document.querySelector("input[type='checkbox']")
-// console.log(checkbox)
+let checkbox = document.querySelector(".activities")
+console.log(checkbox.children[1].tagName)
 
 // Error Message Function
 
