@@ -291,51 +291,42 @@ paymentEl.addEventListener('change', (e)=>{
                             // Functions that formats display for errors
 
 
-// Tooltip
-// function toolTip(text){
-//     // Format tooltip
-    
-// }
+
 
 // Should take in element name as parameter to style
 function displayError(el){
+
+        // Change the color of the elements border
         el.style.borderColor = 'red'
 
-        // Error message
+        // Create the error message
         let errorEl = document.createElement("span")
 
         
-
-       
-        // To prevent duplication, if the next element sibling does not have the error text, append it
+        // This is to prevent duplication of error messages 
+        // if the next element sibling does not have the error text or if it does not exist, insert it
         if(el.nextElementSibling.textContent != "Please use the appropriate format"){
 
-            // Error message text
-             errorEl.textContent = 'Please use the appropriate format'
+                // Error message text
+                errorEl.textContent = 'Please use the appropriate format'
 
-                 // insertbefore next element child
+                 // Insert the message before the next element sibling
                 el.parentElement.insertBefore(errorEl, el.nextElementSibling)
             
         } 
 
-
-        
-        
         // Error message color
         errorEl.style.color = 'red';
 
-        // Error message font
-        errorEl.style.fontWeight = '700'
-
-        
+        // Error message font weight
+        errorEl.style.fontWeight = '700'    
 }
 
 // Function to remove error message 
 
 function removeError(el){
 
-            // Remove styling
-
+            // This will revert the borderColor to it's original color
             el.style.borderColor = '#5e97b0'
             
             if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
@@ -348,7 +339,6 @@ function validName(){
 
             // Can only be letters and must be more than 1 character
             let nameValid = /\D[a-z]{1,}/ig
-            
             
             // Select username input box
             let userNameInput = document.querySelector('#name');
@@ -365,7 +355,6 @@ function validName(){
             } else{
                 removeError(userNameInput)
             }
-
 }
 
 
@@ -373,34 +362,41 @@ function validName(){
 
 function validEmail(){
 
-
-            // Regular expression rule that input has to meet
+            // Regular expression rule that the input has to meet
             let emailValid = /[^@]+@[^@]+\.[^@]+/ig
 
+            // Select the input with the id "mail"
             let emailInput = document.querySelector('#mail')
 
+            // Select the value for emailInput and place into a variable
             let emailInputValue = emailInput.value
-
+            
+            // Test the value that the user has created and test it against the emailValid regex
+            // Store it into a variable
             let isEmailValid = emailValid.test(emailInputValue);
 
+            // If the if statement returns false, the displayError() function wil run
             if(isEmailValid == false){
                 displayError(emailInput)
             } else{
                 removeError(emailInput);
             }
-
 }
 
 
 
 function validActivitySection(){
     
+    // Select the checkboxes that the user has clicked
     let activityButtonChecked = document.querySelector("input[type='checkbox']:checked");
 
+    // Select the parent div / fieldset
     let activityDiv = document.querySelector('.activities')
     
+    // If the activityButtonChecked variable does not exist, the displayError function will run
     if(!activityButtonChecked){
         displayError(activityDiv)
+        
     } else{
         removeError(activityDiv)
     }
@@ -441,8 +437,7 @@ function validActivitySection(){
 // }
 }
 
-let checkbox = document.querySelector(".activities")
-console.log(checkbox.children[1].tagName)
+
 
 // Error Message Function
 
@@ -466,3 +461,11 @@ submitBtn.addEventListener('click', (e)=>{
 
 
 
+
+
+
+
+
+
+// let checkbox = document.querySelector(".activities")
+// console.log(checkbox.children[1].tagName)
