@@ -304,12 +304,14 @@ function displayError(el){
         // Error message
         let errorEl = document.createElement("span")
 
-        // Error message text
-        errorEl.textContent = 'Please use the appropriate format'
+        
 
        
         // To prevent duplication, if the next element sibling does not have the error text, append it
         if(el.nextElementSibling.textContent != "Please use the appropriate format"){
+
+            // Error message text
+             errorEl.textContent = 'Please use the appropriate format'
 
                  // insertbefore next element child
                 el.parentElement.insertBefore(errorEl, el.nextElementSibling)
