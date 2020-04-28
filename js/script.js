@@ -437,6 +437,8 @@ function validActivitySection(){
 // }
 }
 
+// let checkbox = document.querySelector("input[type='checkbox']")
+// console.log(checkbox)
 
 // Error Message Function
 
