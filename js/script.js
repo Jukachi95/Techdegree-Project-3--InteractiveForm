@@ -449,7 +449,11 @@ function validCreditCard(){
     let creditCardSelect = document.querySelector('#payment').value
 
     if(creditCardSelect == 'credit card'){
-        console.log("credit card selected")
+        
+        // Regex valuues that the user will have to meet
+        let creditCardVal = /[]/ig
+
+
     }
 
     // Might have to use
