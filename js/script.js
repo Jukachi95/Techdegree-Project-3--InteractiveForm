@@ -266,6 +266,8 @@ paymentEl.addEventListener('change', (e)=>{
             paypalDiv.hidden = true;
             bitcoinDiv.hidden = true;
 
+            // Credit card validation
+
         } else if (e.target.value === "bitcoin"){
 
             creditCardDiv.hidden = true;
@@ -440,6 +442,7 @@ function validActivitySection(){
 
 
 // If the credit card option is selected
+
 
 
 
