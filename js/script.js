@@ -439,7 +439,9 @@ function validActivitySection(){
 
 
 
-// Error Message Function
+// If the credit card option is selected
+
+
 
 
 // SUBMIT BUTTON EVENT LISTENER
