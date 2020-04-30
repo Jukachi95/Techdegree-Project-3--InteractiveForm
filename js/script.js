@@ -443,7 +443,18 @@ function validActivitySection(){
 
 // If the credit card option is selected
 
+function validCreditCard(){
 
+    // Check if the credit card option is seleceted
+    let creditCardSelect = document.querySelector('#payment').value
+
+    if(creditCardSelect == 'credit card'){
+        console.log("credit card selected")
+    }
+
+    // Might have to use
+
+}
 
 
 
@@ -456,6 +467,7 @@ submitBtn.addEventListener('click', (e)=>{
     validName()
     validEmail()
     validActivitySection()
+    validCreditCard()
     // May have to delcare variables before putting into functions
 
     // let userNameValue = document.querySelector('#name').value
