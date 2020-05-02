@@ -453,6 +453,8 @@ function validCreditCard(){
         // Regex values that the user will have to meet
         let creditCardVal = /[]/ig
 
+        // Replace the value for creditCardVal, and format it into 3 spaces
+        // use .replace()
 
     }
 
