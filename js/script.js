@@ -450,7 +450,7 @@ function validCreditCard(){
 
     if(creditCardSelect == 'credit card'){
         
-        // Regex valuues that the user will have to meet
+        // Regex values that the user will have to meet
         let creditCardVal = /[]/ig
 
 
