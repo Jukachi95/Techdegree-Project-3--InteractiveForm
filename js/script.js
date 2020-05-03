@@ -451,16 +451,15 @@ function validCreditCard(){
     if(creditCardSelect == 'credit card'){
         
         // Regex values that the user will have to meet
-        let creditCardVal = /[]/ig
+        let creditRegEx = /[]/ig
 
         // Get the value for the inputs
         
         // Credit Card
-
-        // CVC
+        let creditCardVal = document.querySelector('#cc-num').value;
 
         // Zip Code
-
+       
         // Replace the value for creditCardVal, and format it into 3 spaces
         // use .replace()
 
@@ -471,6 +470,18 @@ function validCreditCard(){
 }
 
 
+
+function validZipCode(){
+    let zipVal = document.querySelector('#zip').value
+
+  
+
+}
+
+function validCVV(){
+  
+  let cvvVal = document.querySelector('#cvv').value
+}
 
 // SUBMIT BUTTON EVENT LISTENER
 let submitBtn = document.querySelector('button[type="submit"]')
