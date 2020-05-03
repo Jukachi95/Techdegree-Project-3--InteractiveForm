@@ -451,20 +451,30 @@ function validCreditCard(){
     if(creditCardSelect == 'credit card'){
         
         // Regex values that the user will have to meet
-        let creditRegEx = /[]/ig
+        let creditRegEx = /[\d]{4}\s[\d]{4}\s[\d]{4}\s[\d]{4}/
 
-        // Get the value for the inputs
         
-        // Credit Card
-        let creditCardVal = document.querySelector('#cc-num').value;
+        
+        // Get the value for the creditCardVal
+        let creditCard = document.querySelector('#cc-num');
 
-        // Zip Code
-       
+        let creditCardVal = creditCard.value
+
+        
+       let creditCardTest = creditRegEx.test(creditCardVal)
+
+      
+
         // Replace the value for creditCardVal, and format it into 3 spaces
         // use .replace()
 
     }
 
+    if(!creditCardTest){
+        displayError(creditCard)
+   } else{
+        removeError(creditCard)
+   }
     // Might have to use
 
 }
