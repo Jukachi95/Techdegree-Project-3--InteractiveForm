@@ -259,14 +259,6 @@ paymentEl.addEventListener('change', (e)=>{
 
 })
 
-                                        // Form Validation  - Event Listener
-
-
-
-
-
-
-                            // Functions that formats display for errors
 
 
 
@@ -300,6 +292,8 @@ function displayError(el){
         errorEl.style.fontWeight = '700'    
 }
 
+
+
 // Function to remove error message 
 
 function removeError(el){
@@ -312,6 +306,8 @@ function removeError(el){
             }
 
 }
+
+
 
 function validName(){
 
@@ -334,6 +330,7 @@ function validName(){
                 removeError(userNameInput)
             }
 }
+
 
 
 // Function to validate email
@@ -360,6 +357,7 @@ function validEmail(){
                 removeError(emailInput);
             }
 }
+
 
 
 
@@ -412,6 +410,7 @@ function validCreditCard(){
 
 
 
+
 function validZipCode(){
 
     // Get the input element 
@@ -437,6 +436,7 @@ function validZipCode(){
                 }
 
 }
+
 
 // Valid CVV Function
 function validCVV(){
