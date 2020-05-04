@@ -490,9 +490,11 @@ function validZipCode(){
 
     let zipCodeVal = zipCode.value
 
-    // I live in the UK, so I'm not sure how US Zip Codes are formatted
-    // So I used UK Postcodes
-    let zipRegEx = /^\w{1,4}\s?\d\w{2}$/
+    // UK Postcode regex
+    // let zipRegEx = /^\w{1,4}\s?\d\w{2}$/
+
+    // US Zipcode
+    let zipRegEx = /^[\d]{5}$/
   
     let zipCodesTest = zipRegEx.test(zipCodeVal)
 
@@ -505,6 +507,7 @@ function validZipCode(){
 
 }
 
+// Valid CVV Function
 function validCVV(){
   
   let cvv = document.querySelector('#cvv')
@@ -534,28 +537,20 @@ submitBtn.addEventListener('click', (e)=>{
     validName()
     validEmail()
     validActivitySection()
-    // validCreditCard()
-    // May have to delcare variables before putting into functions
+   
 
      // Check if the credit card option is seleceted
      let creditCardSelect = document.querySelector('#payment').value
 
-    if(creditCardSelect == 'credit card'){
-        validCreditCard()
-        validZipCode()
-        validCVV()
-    }
+
+        // If selected, run these functions
+            if(creditCardSelect == 'credit card'){
+                validCreditCard()
+                validZipCode()
+                validCVV()
+            }
     
     
 })
 
 
-
-
-
-
-
-
-
-// let checkbox = document.querySelector(".activities")
-// console.log(checkbox.children[1].tagName)
