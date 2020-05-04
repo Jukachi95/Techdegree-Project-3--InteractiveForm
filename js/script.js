@@ -1,8 +1,3 @@
-// When the document loads, focus on the first input
-// Can either use window.onload or select the Name input element and place focus on it
-
-// Declare variable for 'Name' input element
-
 
 // Declare event listener on name input
 
@@ -29,24 +24,6 @@ window.onload = function(){
     // Get the element for parent element that will be inserted
     let colorSelect = document.getElementById('color')
 
-    // Possible solutions.....
-
-    // Do I want to use insert before, because if I do  I will have to delete the other options
-    // Or do I want to remove the elements completely and just add the single newOptionEl
-    // Or do I add the newOptionEl and THEN hide the other items until clicked
-
-    // Current solution --->  Loop through the children to hide display
-    // for(let i = 0; i < colorSelect.length; i++){
-    //     colorSelect[i].style.display = 'none'
-    // }
-
-    // PREVIOUS SOLUTION
-    // colorSelect.innerHTML = ` <option> Please select a T-Shirt theme </option>`;
-
-    // New solution would be to hide the elements and only show the select tshirt message
-    // console.log(colorSelect)
-
-    //    Hide or do not display the option element when adding the 'change' event listener
 }
 
 
@@ -168,7 +145,6 @@ let activitySection = document.querySelector('.activities')
 activitySection.appendChild(newActivity)
 
 // Create a variable for the activity total that will be added to
-// ?????? May have to change  variable name to 'cost'
 let activityTotal = 0;
 
 
