@@ -507,7 +507,11 @@ function validZipCode(){
 
 function validCVV(){
   
-  let cvvVal = document.querySelector('#cvv').value
+  let cvv = document.querySelector('#cvv')
+
+  let cvvVal = cvv.val;
+
+  let cvvRegEx = //
 }
 
 
