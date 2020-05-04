@@ -403,99 +403,54 @@ function validActivitySection(){
         removeError(activityDiv)
     }
     
-
-//     for(i = 0; i < activityButtons.length; i++){
-
-        
-
-//         // if(activityButtons[i].checked){
-
-//         //     activityButtons[i].addEventListener('click', ()=>{
-//         //         console.log("checked")  
-//         //     })
-            
-//         //     // console.log(activityButtons.length)
-//         // }else{
-//         //     console.log("none checked")
-//         // }
-
-//         activityButtons[i].addEventListener('click', ()=>{
-//                 if(!activityButtons.checked){
-//                     console.log("none checked")
-//                 }
-
-//     })
-
-
-//     // ***** POSSIBLE SOLUTION ***** '///// 
-//     // if(activityButtons.checked){
-//     //     console.log("checked")
-//     //     // console.log(activityButtons.length)
-//     // }else{
-//     //     console.log("not checked")
-//     // }
-    
-
-// }
 }
 
-
-
-// If the credit card option is selected
 
 
 
 function validCreditCard(){
 
-   
-
-    // if(creditCardSelect == 'credit card'){
-        
         // Regex values that the user will have to meet
         let creditRegEx = /[\d]{4}\s[\d]{4}\s[\d]{4}\s[\d]{4}/
 
         
-        
-        // Get the value for the creditCardVal
+        // Get the input element
         let creditCard = document.querySelector('#cc-num');
 
+        // Get the value entered for the input element
         let creditCardVal = creditCard.value
 
-        
-       let creditCardTest = creditRegEx.test(creditCardVal)
+        // Test the value and run it against the regEx and store it in a variale
+        let creditCardTest = creditRegEx.test(creditCardVal)
 
       
 
-        // Replace the value for creditCardVal, and format it into 3 spaces
-        // use .replace()
-
-        if(!creditCardTest){
-            creditCard.style.borderColor = 'red'
-    } else{
-            creditCard.style.borderColor = '#5e97b0'
-    }
-
-    
-
-            
-   
-
+                 // If the value entered does not meet the criteria, then the borderColor will change to indicate an error
+            if(!creditCardTest){
+                 creditCard.style.borderColor = 'red'
+            } else{
+                // Otherwise it will return to it's default styling
+                 creditCard.style.borderColor = '#5e97b0'
+            }
 }
 
 
 
 function validZipCode(){
 
+    // Get the input element 
     let zipCode = document.querySelector('#zip')
 
+    // Store the value for in a new variable
     let zipCodeVal = zipCode.value
 
     // UK Postcode regex
     // let zipRegEx = /^\w{1,4}\s?\d\w{2}$/
 
-    // US Zipcode
-    let zipRegEx = /^[\d]{5}$/
+    // Create the regEx for a US Zipcode and store it into a variable
+    let zipRegEx = /^[\d]{5}$/;
   
+    // Test the value that the user has entered and store it into a variable
     let zipCodesTest = zipRegEx.test(zipCodeVal)
 
 
@@ -510,13 +465,17 @@ function validZipCode(){
 // Valid CVV Function
 function validCVV(){
   
-  let cvv = document.querySelector('#cvv')
+        // Get the input element
+        let cvv = document.querySelector('#cvv');
 
-  let cvvVal = cvv.val;
+        // Store the value into a variable
+        let cvvVal = cvv.val;
 
-  let cvvRegEx = /^[0-9]{3,4}$/
+        // Set the regEx that the users value has to meet
+        let cvvRegEx = /^[0-9]{3,4}$/
 
-  cvvTest = cvvRegEx.test(cvvVal)
+         // Test the value that the user has entered and store it into a variable
+        let cvvTest = cvvRegEx.test(cvvVal)
 
 
                 if(!cvvTest){
@@ -528,12 +487,15 @@ function validCVV(){
 
 
 
-// SUBMIT BUTTON EVENT LISTENER
+                                                // SUBMIT BUTTON EVENT LISTENER
+
 let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
+    // Prevent the default behaviour of the submit button
     e.preventDefault()
 
+    // Once clicked, these validation functions will run
     validName()
     validEmail()
     validActivitySection()
@@ -541,7 +503,6 @@ submitBtn.addEventListener('click', (e)=>{
 
      // Check if the credit card option is seleceted
      let creditCardSelect = document.querySelector('#payment').value
-
 
         // If selected, run these functions
             if(creditCardSelect == 'credit card'){
