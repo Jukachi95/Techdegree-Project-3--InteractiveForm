@@ -500,7 +500,7 @@ function validZipCode(){
                 if(!zipCodesTest){
                     zipCode.style.borderColor = 'red';
                 } else{
-                    ZipCode.style.borderColor = '#5e97b0'
+                    zipCode.style.borderColor = '#5e97b0'
                 }
 
 }
@@ -511,7 +511,16 @@ function validCVV(){
 
   let cvvVal = cvv.val;
 
-  let cvvRegEx = //
+  let cvvRegEx = /^[0-9]{3,4}$/
+
+  cvvTest = cvvRegEx.test(cvvVal)
+
+
+                if(!cvvTest){
+                    cvv.style.borderColor = 'red'
+                } else{
+                    cvv.style.borderColor = '#5e97b0'
+                }
 }
 
 
@@ -534,7 +543,7 @@ submitBtn.addEventListener('click', (e)=>{
     if(creditCardSelect == 'credit card'){
         validCreditCard()
         validZipCode()
-        // validCVV()
+        validCVV()
     }
     
     
