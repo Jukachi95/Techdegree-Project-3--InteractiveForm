@@ -443,12 +443,13 @@ function validActivitySection(){
 
 // If the credit card option is selected
 
+
+
 function validCreditCard(){
 
-    // Check if the credit card option is seleceted
-    let creditCardSelect = document.querySelector('#payment').value
+   
 
-    if(creditCardSelect == 'credit card'){
+    // if(creditCardSelect == 'credit card'){
         
         // Regex values that the user will have to meet
         let creditRegEx = /[\d]{4}\s[\d]{4}\s[\d]{4}\s[\d]{4}/
@@ -468,23 +469,39 @@ function validCreditCard(){
         // Replace the value for creditCardVal, and format it into 3 spaces
         // use .replace()
 
+        if(!creditCardTest){
+            creditCard.style.borderColor = 'red'
+    } else{
+            creditCard.style.borderColor = '#5e97b0'
     }
 
-    if(!creditCardTest){
-        displayError(creditCard)
-   } else{
-        removeError(creditCard)
-   }
-    // Might have to use
+    
+
+            
+   
 
 }
 
 
 
 function validZipCode(){
-    let zipVal = document.querySelector('#zip').value
 
+    let zipCode = document.querySelector('#zip')
+
+    let zipCodeVal = zipCode.value
+
+    // I live in the UK, so I'm not sure how US Zip Codes are formatted
+    // So I used UK Postcodes
+    let zipRegEx = /^\w{1,4}\s?\d\w{2}$/
   
+    let zipCodesTest = zipRegEx.test(zipCodeVal)
+
+
+                if(!zipCodesTest){
+                    zipCode.style.borderColor = 'red';
+                } else{
+                    ZipCode.style.borderColor = '#5e97b0'
+                }
 
 }
 
@@ -492,6 +509,8 @@ function validCVV(){
   
   let cvvVal = document.querySelector('#cvv').value
 }
+
+
 
 // SUBMIT BUTTON EVENT LISTENER
 let submitBtn = document.querySelector('button[type="submit"]')
@@ -502,11 +521,17 @@ submitBtn.addEventListener('click', (e)=>{
     validName()
     validEmail()
     validActivitySection()
-    validCreditCard()
+    // validCreditCard()
     // May have to delcare variables before putting into functions
 
-    // let userNameValue = document.querySelector('#name').value
-    // console.log(userNameValue)
+     // Check if the credit card option is seleceted
+     let creditCardSelect = document.querySelector('#payment').value
+
+    if(creditCardSelect == 'credit card'){
+        validCreditCard()
+        validZipCode()
+        // validCVV()
+    }
     
     
 })
