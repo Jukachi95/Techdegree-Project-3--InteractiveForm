@@ -309,13 +309,89 @@ function removeError(el){
 
 // Display error for activity section
 
-function displayErrorActivity(){
+function displayErrorActivity(el){
+
+     // Change the color of the elements border
+     el.style.borderColor = 'red'
+
+     // Create the error message
+     let errorEl = document.createElement("span")
+
+     
+     // This is to prevent duplication of error messages 
+     // if the next element sibling does not have the error text or if it does not exist, insert it
+     if(el.nextElementSibling.textContent != "Please select an activity"){
+
+             // Error message text
+             errorEl.textContent = 'Please select an activity'
+
+              // Insert the message before the next element sibling
+             el.parentElement.insertBefore(errorEl, el.nextElementSibling)
+         
+     } 
+
+     // Error message color
+     errorEl.style.color = 'red';
+
+     // Error message font weight
+     errorEl.style.fontWeight = '700'    
 
 }
 
-function removeErrorActivity(){
+function removeErrorActivity(el){
+
+    el.style.borderColor = '#5e97b0'
+            
+    if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+        el.nextElementSibling.remove()
+    }
+
+}
+
+
+// Function for credit card error display and removal
+function displayErrorCC(el){
+
+
+    // Create the error message
+    let errorEl = document.createElement("span")
+
     
+    // This is to prevent duplication of error messages 
+    // if the next element sibling does not have the error text or if it does not exist, insert it
+    if(el.nextElementSibling.textContent != "Please enter the correct card details"){
+
+            // Error message text
+            errorEl.textContent = 'Please enter the correct card details'
+
+             // Insert the message before the next element sibling
+            el.parentElement.insertBefore(errorEl, el.nextElementSibling)
+        
+    } 
+
+    // Error message color
+    errorEl.style.color = 'red';
+
+    // Error message font weight
+    errorEl.style.fontWeight = '700'    
+
 }
+
+function removeErrorCC(el){
+
+   el.style.borderColor = '#5e97b0'
+           
+   if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+       el.nextElementSibling.remove()
+   }
+
+}
+
+
+
+
+
+
 
 function validName(){
 
@@ -379,10 +455,10 @@ function validActivitySection(){
     
     // If the activityButtonChecked variable does not exist, the displayError function will run
     if(!activityButtonChecked){
-        displayError(activityDiv)
+        displayErrorActivity(activityDiv)
         
     } else{
-        removeError(activityDiv)
+        removeErrorActivity(activityDiv)
     }
     
 }
@@ -395,6 +471,8 @@ function validCreditCard(){
         // Regex values that the user will have to meet
         let creditRegEx = /[\d]{4}\s[\d]{4}\s[\d]{4}\s[\d]{4}/
 
+        // Parent element
+        let creditParentElement = document.querySelector('#credit-card')
         
         // Get the input element
         let creditCard = document.querySelector('#cc-num');
@@ -410,6 +488,8 @@ function validCreditCard(){
                  // If the value entered does not meet the criteria, then the borderColor will change to indicate an error
             if(!creditCardTest){
                  creditCard.style.borderColor = 'red'
+                 displayErrorCC(creditParentElement)
+                 
             } else{
                 // Otherwise it will return to it's default styling
                  creditCard.style.borderColor = '#5e97b0'
