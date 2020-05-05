@@ -536,7 +536,7 @@ function validCVV(){
         let cvvVal = cvv.val;
 
         // Set the regEx that the users value has to meet
-        let cvvRegEx = /^[0-9]{3,4}$/
+        let cvvRegEx = /^[0-9]{3}$/
 
          // Test the value that the user has entered and store it into a variable
         let cvvTest = cvvRegEx.test(cvvVal)
