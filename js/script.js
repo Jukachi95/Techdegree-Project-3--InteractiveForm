@@ -254,7 +254,7 @@ paymentEl.addEventListener('change', (e)=>{
             bitcoinDiv.hidden = false;
             let creditParentElement = document.querySelector('#credit-card')
             removeErrorCC(creditParentElement)
-            
+
         } else if(e.target.value === "paypal"){
             creditCardDiv.hidden = true;
             paypalDiv.hidden = false;
@@ -545,7 +545,7 @@ function validCVV(){
         let cvv = document.querySelector('#cvv');
 
         // Store the value into a variable
-        let cvvVal = cvv.val;
+        let cvvVal = cvv.value;
 
         // Set the regEx that the users value has to meet
         let cvvRegEx = /^[0-9]{3}$/
