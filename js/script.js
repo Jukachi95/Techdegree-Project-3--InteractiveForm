@@ -216,7 +216,10 @@ activitySection.addEventListener('change', (e)=>{
 
 let selectPaymentOpt = document.querySelector('#payment')[0];
 selectPaymentOpt.hidden = true;
-console.log(selectPaymentOpt)
+
+let creditCardDropdown = document.querySelector('#payment')[1];
+creditCardDropdown.selected = true;
+
 
 
 // Select the 'payment' element
@@ -249,11 +252,15 @@ paymentEl.addEventListener('change', (e)=>{
             creditCardDiv.hidden = true;
             paypalDiv.hidden = true;
             bitcoinDiv.hidden = false;
-
+            let creditParentElement = document.querySelector('#credit-card')
+            removeErrorCC(creditParentElement)
+            
         } else if(e.target.value === "paypal"){
             creditCardDiv.hidden = true;
             paypalDiv.hidden = false;
             bitcoinDiv.hidden = true;
+            let creditParentElement = document.querySelector('#credit-card')
+            removeErrorCC(creditParentElement)
         }
        
 
@@ -493,6 +500,7 @@ function validCreditCard(){
             } else{
                 // Otherwise it will return to it's default styling
                  creditCard.style.borderColor = '#5e97b0'
+                 removeErrorCC(creditParentElement)
             }
 }
 
@@ -507,6 +515,8 @@ function validZipCode(){
     // Store the value for in a new variable
     let zipCodeVal = zipCode.value
 
+    let creditParentElement = document.querySelector('#credit-card')
+
     // UK Postcode regex
     // let zipRegEx = /^\w{1,4}\s?\d\w{2}$/
 
@@ -519,8 +529,10 @@ function validZipCode(){
 
                 if(!zipCodesTest){
                     zipCode.style.borderColor = 'red';
+                    displayErrorCC(creditParentElement)
                 } else{
                     zipCode.style.borderColor = '#5e97b0'
+                    removeErrorCC(creditParentElement)
                 }
 
 }
@@ -541,11 +553,14 @@ function validCVV(){
          // Test the value that the user has entered and store it into a variable
         let cvvTest = cvvRegEx.test(cvvVal)
 
+        let creditParentElement = document.querySelector('#credit-card')
 
                 if(!cvvTest){
                     cvv.style.borderColor = 'red'
+                    displayErrorCC(creditParentElement)
                 } else{
                     cvv.style.borderColor = '#5e97b0'
+                    removeErrorCC(creditParentElement)
                 }
 }
 
