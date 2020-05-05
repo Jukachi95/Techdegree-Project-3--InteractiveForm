@@ -307,7 +307,15 @@ function removeError(el){
 
 }
 
+// Display error for activity section
 
+function displayErrorActivity(){
+
+}
+
+function removeErrorActivity(){
+    
+}
 
 function validName(){
 
