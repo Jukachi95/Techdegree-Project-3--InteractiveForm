@@ -377,11 +377,11 @@ function displayErrorCC(el){
 
 }
 
+// Function to remove error message for removing error message
+
 function removeErrorCC(el){
 
-   el.style.borderColor = '#5e97b0'
-           
-   if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+   if(el.nextElementSibling.textContent == "Please enter the correct card details"){
        el.nextElementSibling.remove()
    }
 
