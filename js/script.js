@@ -349,7 +349,7 @@ function removeErrorActivity(el){
 
     el.style.borderColor = '#5e97b0'
             
-    if(el.nextElementSibling.textContent == 'Please use the appropriate format'){
+    if(el.nextElementSibling.textContent == 'Please select an activity'){
         el.nextElementSibling.remove()
     }
 
@@ -417,6 +417,7 @@ function validName(){
             // If the name is not valid, run a function that displays red
             if(isNameValid == false){
             displayError(userNameInput)
+           
             } else{
                 removeError(userNameInput)
             }
@@ -444,6 +445,7 @@ function validEmail(){
             // If the if statement returns false, the displayError() function wil run
             if(isEmailValid == false){
                 displayError(emailInput)
+               
             } else{
                 removeError(emailInput);
             }
@@ -496,7 +498,7 @@ function validCreditCard(){
             if(!creditCardTest){
                  creditCard.style.borderColor = 'red'
                  displayErrorCC(creditParentElement)
-                 
+                
             } else{
                 // Otherwise it will return to it's default styling
                  creditCard.style.borderColor = '#5e97b0'
@@ -530,6 +532,7 @@ function validZipCode(){
                 if(!zipCodesTest){
                     zipCode.style.borderColor = 'red';
                     displayErrorCC(creditParentElement)
+                  
                 } else{
                     zipCode.style.borderColor = '#5e97b0'
                     removeErrorCC(creditParentElement)
@@ -555,41 +558,45 @@ function validCVV(){
 
         let creditParentElement = document.querySelector('#credit-card')
 
+        
+        
                 if(!cvvTest){
                     cvv.style.borderColor = 'red'
                     displayErrorCC(creditParentElement)
+                    
                 } else{
                     cvv.style.borderColor = '#5e97b0'
                     removeErrorCC(creditParentElement)
+                    
                 }
 }
-
 
 
                                                 // SUBMIT BUTTON EVENT LISTENER
 
 let submitBtn = document.querySelector('button[type="submit"]')
 
-submitBtn.addEventListener('click', (e)=>{
-    // Prevent the default behaviour of the submit button
-    e.preventDefault()
 
-    // Once clicked, these validation functions will run
+submitBtn.addEventListener('click', (e)=>{
+
+    
     validName()
     validEmail()
     validActivitySection()
+
+
+  // Check if the credit card option is seleceted
+  let creditCardSelect = document.querySelector('#payment').value
+ 
+  // If selected, run these functions
+      if(creditCardSelect == 'credit card'){
+          validCreditCard()
+          validZipCode()
+          validCVV()
+      }
    
-
-     // Check if the credit card option is seleceted
-     let creditCardSelect = document.querySelector('#payment').value
-
-        // If selected, run these functions
-            if(creditCardSelect == 'credit card'){
-                validCreditCard()
-                validZipCode()
-                validCVV()
-            }
-    
+      
+   
     
 })
 
