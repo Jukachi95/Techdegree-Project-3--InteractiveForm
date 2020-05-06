@@ -579,7 +579,8 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    
+    e.preventDefault()
+
     validName()
     validEmail()
     validActivitySection()
@@ -588,15 +589,13 @@ submitBtn.addEventListener('click', (e)=>{
   // Check if the credit card option is seleceted
   let creditCardSelect = document.querySelector('#payment').value
  
-  // If selected, run these functions
-      if(creditCardSelect == 'credit card'){
-          validCreditCard()
-          validZipCode()
-          validCVV()
-      }
-   
-      
-   
+        // If selected, run these functions
+                if(creditCardSelect == 'credit card'){
+                    validCreditCard()
+                    validZipCode()
+                    validCVV()
+                }
+  
     
 })
 
