@@ -417,9 +417,10 @@ function validName(){
             // If the name is not valid, run a function that displays red
             if(isNameValid == false){
             displayError(userNameInput)
-           
+                return false
             } else{
                 removeError(userNameInput)
+                return true
             }
 }
 
@@ -445,9 +446,10 @@ function validEmail(){
             // If the if statement returns false, the displayError() function wil run
             if(isEmailValid == false){
                 displayError(emailInput)
-               
+               return false
             } else{
                 removeError(emailInput);
+                return true
             }
 }
 
@@ -465,9 +467,10 @@ function validActivitySection(){
     // If the activityButtonChecked variable does not exist, the displayError function will run
     if(!activityButtonChecked){
         displayErrorActivity(activityDiv)
-        
+        return false
     } else{
         removeErrorActivity(activityDiv)
+        return true
     }
     
 }
@@ -498,11 +501,12 @@ function validCreditCard(){
             if(!creditCardTest){
                  creditCard.style.borderColor = 'red'
                  displayErrorCC(creditParentElement)
-                
+                return false
             } else{
                 // Otherwise it will return to it's default styling
                  creditCard.style.borderColor = '#5e97b0'
                  removeErrorCC(creditParentElement)
+                 return true
             }
 }
 
@@ -532,10 +536,11 @@ function validZipCode(){
                 if(!zipCodesTest){
                     zipCode.style.borderColor = 'red';
                     displayErrorCC(creditParentElement)
-                  
+                    return false
                 } else{
                     zipCode.style.borderColor = '#5e97b0'
                     removeErrorCC(creditParentElement)
+                    return true
                 }
 
 }
@@ -563,19 +568,29 @@ function validCVV(){
                 if(!cvvTest){
                     cvv.style.borderColor = 'red'
                     displayErrorCC(creditParentElement)
-                    
+                    return false
                 } else{
                     cvv.style.borderColor = '#5e97b0'
                     removeErrorCC(creditParentElement)
-                    
+                    return true
                 }
 }
 
 
+
+
 function isValid(){
     
+        if(validName() || validEmail() || validActivitySection() || validCVV() || validCVV){
+            return true
+        } else{
+            return false
+        }
+
 }
 
+
+ 
 
 
                                                 // SUBMIT BUTTON EVENT LISTENER
@@ -585,7 +600,7 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    if(isValid == false){
+    if(!isValid){
         e.preventDefault()
     }
     
