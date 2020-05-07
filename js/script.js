@@ -572,6 +572,12 @@ function validCVV(){
 }
 
 
+function isValid(){
+    
+}
+
+
+
                                                 // SUBMIT BUTTON EVENT LISTENER
 
 let submitBtn = document.querySelector('button[type="submit"]')
@@ -579,11 +585,12 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    e.preventDefault()
+    if(isValid == false){
+        e.preventDefault()
+    }
+    
 
-    validName()
-    validEmail()
-    validActivitySection()
+    
 
 
   // Check if the credit card option is seleceted
