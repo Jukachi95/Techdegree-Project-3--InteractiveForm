@@ -582,8 +582,19 @@ function validCVV(){
 
 
 
-let result = valid() 
-console.log(result)
+function isValid(){
+
+    // Declare the variable for selectVariable
+    // Then try to nest if statements inside
+
+    if(validName() == false &&  validEmail() == false && validActivitySection() == false){
+        return false
+    } else{
+        return true
+    }
+    
+}
+
 
 
                                                 // SUBMIT BUTTON EVENT LISTENER
@@ -593,7 +604,7 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    if(isValid() == 'false'){
+    if(isValid() == false){
         e.preventDefault()
     } 
     
