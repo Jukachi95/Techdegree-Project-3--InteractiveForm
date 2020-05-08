@@ -579,35 +579,12 @@ function validCVV(){
 
 
 
-function isValid(){
-    
-    let creditCardSelect = document.querySelector('#payment').value
-
-
-//           // Check if the credit card option is seleceted
-//   let creditCardSelect = document.querySelector('#payment').value
- 
-//         // If selected, run these functions
-//                 if(creditCardSelect == 'credit card'){
-//                     validCreditCard()
-//                     validZipCode()
-//                     validCVV()
-//                     validActivitySection();
-//                     validEmail()
-//                     validName()
-//                 } else {
-//                     validActivitySection();
-//                     validEmail()
-//                     validName() 
-//                 }
-
-}
 
 
 
-
- let result = isValid() 
+let result = valid() 
 console.log(result)
+
 
                                                 // SUBMIT BUTTON EVENT LISTENER
 
@@ -683,3 +660,22 @@ submitBtn.addEventListener('click', (e)=>{
 //                     validName() 
 //                 }
 // }
+
+
+
+//           // Check if the credit card option is seleceted
+//   let creditCardSelect = document.querySelector('#payment').value
+ 
+//         // If selected, run these functions
+//                 if(creditCardSelect == 'credit card'){
+//                     validCreditCard()
+//                     validZipCode()
+//                     validCVV()
+//                     validActivitySection();
+//                     validEmail()
+//                     validName()
+//                 } else {
+//                     validActivitySection();
+//                     validEmail()
+//                     validName() 
+//                 }
