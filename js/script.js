@@ -581,17 +581,33 @@ function validCVV(){
 
 function isValid(){
     
-        if(validName() || validEmail() || validActivitySection() || validCVV() || validCVV){
-            return true
-        } else{
-            return false
-        }
+    let creditCardSelect = document.querySelector('#payment').value
+
+
+//           // Check if the credit card option is seleceted
+//   let creditCardSelect = document.querySelector('#payment').value
+ 
+//         // If selected, run these functions
+//                 if(creditCardSelect == 'credit card'){
+//                     validCreditCard()
+//                     validZipCode()
+//                     validCVV()
+//                     validActivitySection();
+//                     validEmail()
+//                     validName()
+//                 } else {
+//                     validActivitySection();
+//                     validEmail()
+//                     validName() 
+//                 }
 
 }
 
 
- 
 
+
+ let result = isValid() 
+console.log(result)
 
                                                 // SUBMIT BUTTON EVENT LISTENER
 
@@ -600,25 +616,70 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    if(!isValid){
+    if(isValid() == 'false'){
         e.preventDefault()
-    }
+    } 
     
 
-    
-
-
-  // Check if the credit card option is seleceted
+    //       Check if the credit card option is seleceted
   let creditCardSelect = document.querySelector('#payment').value
  
         // If selected, run these functions
-                if(creditCardSelect == 'credit card'){
-                    validCreditCard()
-                    validZipCode()
-                    validCVV()
-                }
+                // if(creditCardSelect == 'credit card'){
+                    
+                //     if(validName() && validEmail() && validActivitySection() && validCreditCard() && validZipCode() && validCVV()){
+                //         return true
+                //     } else{
+                //         return false
+                //     }
+
+
+                // } else {
+
+                //     if(validName() && validEmail() && validActivitySection()){
+                //         return true
+                //     } else{
+                //         return false
+                //     }
+
+                // }
+
+
+
   
     
 })
 
 
+
+
+
+// wAS PREVIOUSLY IN isValid
+// if(validName() || validEmail() || validActivitySection() || validCreditCard() || validZipCode() || validCVV()){
+//     return true
+// } else{
+//     return false
+// }
+
+
+
+
+// function creditCardSelect(){
+
+// //       Check if the credit card option is seleceted
+//   let creditCardSelect = document.querySelector('#payment').value
+ 
+//         // If selected, run these functions
+//                 if(creditCardSelect == 'credit card'){
+//                     validCreditCard()
+//                     validZipCode()
+//                     validCVV()
+//                     validActivitySection();
+//                     validEmail()
+//                     validName()
+//                 } else {
+//                     validActivitySection();
+//                     validEmail()
+//                     validName() 
+//                 }
+// }
