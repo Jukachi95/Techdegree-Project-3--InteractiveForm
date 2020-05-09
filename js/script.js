@@ -584,14 +584,33 @@ function validCVV(){
 
 function isValid(){
 
-    // Declare the variable for selectVariable
-    // Then try to nest if statements inside
+    
 
-    if(validName() == false &&  validEmail() == false && validActivitySection() == false){
-        return false
-    } else{
-        return true
-    }
+              // Check if the credit card option is seleceted
+                let creditCardSelect = document.querySelector('#payment').value
+ 
+         // If selected, run these functions
+          if(creditCardSelect == 'credit card' && validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
+                
+
+              return true
+
+          } else if (creditCardSelect != 'credit card' && validActivitySection() == true && validEmail() == true && validName() == true){
+             
+              return true
+
+          } else if(validName() == false && validEmail() == false && validActivitySection() == false && validCreditCard() == false && validCVV() == false && validZipCode() == false){
+            
+            return false
+
+          }
+
+    // if(validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
+       
+    //     return true
+    // } else{
+    //     return false
+    // }
     
 }
 
@@ -602,16 +621,29 @@ function isValid(){
 let submitBtn = document.querySelector('button[type="submit"]')
 
 
+
 submitBtn.addEventListener('click', (e)=>{
 
     if(isValid() == false){
         e.preventDefault()
     } 
     
+    
+})
 
-    //       Check if the credit card option is seleceted
-  let creditCardSelect = document.querySelector('#payment').value
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
         // If selected, run these functions
                 // if(creditCardSelect == 'credit card'){
                     
@@ -631,15 +663,6 @@ submitBtn.addEventListener('click', (e)=>{
                 //     }
 
                 // }
-
-
-
-  
-    
-})
-
-
-
 
 
 // wAS PREVIOUSLY IN isValid
@@ -674,19 +697,4 @@ submitBtn.addEventListener('click', (e)=>{
 
 
 
-//           // Check if the credit card option is seleceted
-//   let creditCardSelect = document.querySelector('#payment').value
- 
-//         // If selected, run these functions
-//                 if(creditCardSelect == 'credit card'){
-//                     validCreditCard()
-//                     validZipCode()
-//                     validCVV()
-//                     validActivitySection();
-//                     validEmail()
-//                     validName()
-//                 } else {
-//                     validActivitySection();
-//                     validEmail()
-//                     validName() 
-//                 }
+
