@@ -605,13 +605,6 @@ function isValid(){
 
           }
 
-    // if(validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
-       
-    //     return true
-    // } else{
-    //     return false
-    // }
-    
 }
 
 
@@ -641,6 +634,20 @@ submitBtn.addEventListener('click', (e)=>{
 
 
 
+
+
+
+
+
+
+
+// if(validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
+       
+    //     return true
+    // } else{
+    //     return false
+    // }
+    
 
 
 
