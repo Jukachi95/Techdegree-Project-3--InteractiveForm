@@ -584,28 +584,31 @@ function validCVV(){
 
 function isValid(){
 
-    
+      // If selected, run these functions
+      validName();
+      validEmail();
+      validActivitySection();
+      validCreditCard();
+      validZipCode();
+      validCVV();
 
-              // Check if the credit card option is seleceted
-                let creditCardSelect = document.querySelector('#payment').value
- 
-         // If selected, run these functions
-          if(creditCardSelect == 'credit card' && validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
-                
-
-              return true
-
-          } else if (creditCardSelect != 'credit card' && validActivitySection() == true && validEmail() == true && validName() == true){
-             
-              return true
-
-          } else if(validName() == false && validEmail() == false && validActivitySection() == false && validCreditCard() == false && validCVV() == false && validZipCode() == false){
-            
-            return false
-
-          }
-
+          let creditCardSelect = document.querySelector('#payment').value
+          if(creditCardSelect == 'credit card'){
+              if(validName()  && validEmail() && validActivitySection()  && validCreditCard()  && validZipCode()  && validCVV() ){
+                  return true
+              } else{
+                  return false
+              }
+          } else {
+              if(validName() && validEmail() && validActivitySection()){
+                  return true
+              } else{
+                  return false
+              }
 }
+     
+}
+
 
 
 
@@ -617,12 +620,39 @@ let submitBtn = document.querySelector('button[type="submit"]')
 
 submitBtn.addEventListener('click', (e)=>{
 
-    if(isValid() == false){
-        e.preventDefault()
-    } 
+            isValid();    
+
+                if(isValid() == false){
+                    e.preventDefault()
+                } 
     
     
 })
+
+
+
+
+
+
+
+// let creditCardSelect = document.querySelector('#payment').value
+
+// if(creditCardSelect == 'credit card'){
+                
+//     if(validName()  && validEmail() && validActivitySection()  && validCreditCard()  && validZipCode()  && validCVV() ){
+//         return true
+//     } else{
+//         return false
+//     }
+
+
+// } else {
+
+//     if(validName() && validEmail() && validActivitySection()){
+//         return true
+//     } else{
+//         return false
+//     }
 
 
 
@@ -651,25 +681,26 @@ submitBtn.addEventListener('click', (e)=>{
 
 
 
-        // If selected, run these functions
-                // if(creditCardSelect == 'credit card'){
-                    
-                //     if(validName() && validEmail() && validActivitySection() && validCreditCard() && validZipCode() && validCVV()){
-                //         return true
-                //     } else{
-                //         return false
-                //     }
+                  
+//     //  Check if the credit card option is seleceted
+//  let creditCardSelect = document.querySelector('#payment').value
+ 
+//  // If selected, run these functions
+//   if(creditCardSelect == 'credit card' && validName() == true && validEmail() == true && validActivitySection() == true && validCreditCard() == true && validCVV() == true && validZipCode() == true){
+        
 
+//       return true
 
-                // } else {
+//   } else if (creditCardSelect != 'credit card' && validActivitySection() == true && validEmail() == true && validName() == true){
+     
+//       return true
 
-                //     if(validName() && validEmail() && validActivitySection()){
-                //         return true
-                //     } else{
-                //         return false
-                //     }
+//   } else if(validName() == false && validEmail() == false && validActivitySection() == false && validCreditCard() == false && validCVV() == false && validZipCode() == false){
+    
+//     return false
 
-                // }
+//   }
+
 
 
 // wAS PREVIOUSLY IN isValid
@@ -705,3 +736,21 @@ submitBtn.addEventListener('click', (e)=>{
 
 
 
+// if(creditCardSelect == 'credit card'){
+                    
+//     if(validName() && validEmail() && validActivitySection() && validCreditCard() && validZipCode() && validCVV()){
+//         return true
+//     } else{
+//         return false
+//     }
+
+
+// } else {
+
+//     if(validName() && validEmail() && validActivitySection()){
+//         return true
+//     } else{
+//         return false
+//     }
+
+// }
