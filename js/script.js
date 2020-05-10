@@ -594,17 +594,17 @@ function isValid(){
 
           let creditCardSelect = document.querySelector('#payment').value
           if(creditCardSelect == 'credit card'){
-              if(validName()  && validEmail() && validActivitySection()  && validCreditCard()  && validZipCode()  && validCVV() ){
-                  return true
-              } else{
-                  return false
-              }
+                if(validName()  && validEmail() && validActivitySection()  && validCreditCard()  && validZipCode()  && validCVV() ){
+                        return true
+                } else{
+                        return false
+                }
           } else {
-              if(validName() && validEmail() && validActivitySection()){
-                  return true
-              } else{
-                  return false
-              }
+                    if(validName() && validEmail() && validActivitySection()){
+                            return true
+                    } else{
+                            return false
+                    }
 }
      
 }
