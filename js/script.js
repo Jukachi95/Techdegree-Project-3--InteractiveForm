@@ -363,10 +363,12 @@ function displayErrorCC(el){
     // Create the error message
     let errorEl = document.createElement("span")
 
+    // If the selected el or type is not credit card...
+    let creditCardSelectVal = document.querySelector('#payment')
     
     // This is to prevent duplication of error messages 
     // if the next element sibling does not have the error text or if it does not exist, insert it
-    if(el.nextElementSibling.textContent != "Please enter the correct card details"){
+    if(el.nextElementSibling.textContent != "Please enter the correct card details" && creditCardSelectVal == 'credit card'){
 
             // Error message text
             errorEl.textContent = 'Please enter the correct card details'
@@ -599,7 +601,7 @@ function isValid(){
                 } else{
                         return false
                 }
-          } else {
+          } else if(creditCardSelect != 'credit card') {
                     if(validName() && validEmail() && validActivitySection()){
                             return true
                     } else{
