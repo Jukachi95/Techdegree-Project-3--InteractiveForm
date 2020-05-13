@@ -24,6 +24,14 @@ window.onload = function(){
     // Get the element for parent element that will be inserted
     let colorSelect = document.getElementById('color')
 
+
+    // Hide paypal and bitcoin on load
+    let paypalDiv = document.querySelector('#paypal');
+   let bitcoinDiv = document.querySelector('#bitcoin');
+
+   paypalDiv.hidden = true;
+   bitcoinDiv.hidden = true;
+
 }
 
 
@@ -364,7 +372,7 @@ function displayErrorCC(el){
     let errorEl = document.createElement("span")
 
     // If the selected el or type is not credit card...
-    let creditCardSelectVal = document.querySelector('#payment')
+    let creditCardSelectVal = document.querySelector('#payment').value
     
     // This is to prevent duplication of error messages 
     // if the next element sibling does not have the error text or if it does not exist, insert it
