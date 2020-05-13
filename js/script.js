@@ -481,7 +481,7 @@ function validActivitySection(){
 function validCreditCard(){
 
         // Regex values that the user will have to meet
-        let creditRegEx = /[\d]{4}[\d]{4}[\d]{4}[\d]{1,4}/
+        let creditRegEx = /^[\d]{4}[\d]{4}[\d]{4}[\d]{1,4}$/
 
         // Parent element
         let creditParentElement = document.querySelector('#credit-card')
